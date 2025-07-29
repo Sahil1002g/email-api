@@ -1,0 +1,51 @@
+{
+  "/home/lenovo/Desktop/task 1/task3/email-api/serverless.yml": {
+    "versionFramework": "4.17.2",
+    "servicePath": "/home/lenovo/Desktop/task 1/task3/email-api/serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "email-api-service",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs18.x",
+        "region": "us-east-1"
+      },
+      "plugins": [
+        "serverless-offline"
+      ],
+      "functions": {
+        "sendEmail": {
+          "handler": "handler.sendEmail",
+          "events": [
+            {
+              "http": {
+                "path": "send-email",
+                "method": "post",
+                "cors": true
+              }
+            }
+          ]
+        }
+      }
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "nodejs18.x",
+      "region": "us-east-1"
+    },
+    "error": {
+      "message": "request to https://core.serverless.com/api/bff/ failed, reason: getaddrinfo EAI_AGAIN core.serverless.com",
+      "stack": "Error: request to https://core.serverless.com/api/bff/ failed, reason: getaddrinfo EAI_AGAIN core.serverless.com\n    at Authentication.getClientDataFromAccessKey (file:///home/lenovo/.serverless/releases/4.17.2/package/dist/sf-core.js:808:18758)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async Authentication.getAuthenticatedData (file:///home/lenovo/.serverless/releases/4.17.2/package/dist/sf-core.js:808:3689)\n    at async Authentication.authenticate (file:///home/lenovo/.serverless/releases/4.17.2/package/dist/sf-core.js:808:22245)\n    at async TraditionalRunner.resolveVariablesAndAuthenticate (file:///home/lenovo/.serverless/releases/4.17.2/package/dist/sf-core.js:812:2379)\n    at async TraditionalRunner.run (file:///home/lenovo/.serverless/releases/4.17.2/package/dist/sf-core.js:1385:27914)\n    at async route (file:///home/lenovo/.serverless/releases/4.17.2/package/dist/sf-core.js:1560:2878)\n    at async Object.run (file:///home/lenovo/.serverless/releases/4.17.2/package/dist/sf-core.js:1561:3661)\n    at async run2 (file:///home/lenovo/.serverless/releases/4.17.2/package/dist/sf-core.js:1561:4815)"
+    },
+    "serviceRawFile": "service: email-api-service\n\n\nprovider:\n  name: aws\n  runtime: nodejs18.x\n  region: us-east-1\n\nplugins:\n  - serverless-offline\n\nfunctions:\n  sendEmail:\n    handler: handler.sendEmail\n    events:\n      - http:\n          path: send-email\n          method: post\n          cors: true\n",
+    "command": [
+      "offline"
+    ],
+    "options": {},
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}
